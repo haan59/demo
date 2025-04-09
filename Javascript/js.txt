@@ -1,0 +1,280 @@
+Javascript:
+
+---------------------------------------------------
+**Đặt tên biến:
+var tênbiến = 'value';
+var tênbiến = number;
+
+---------------------------------------------------
+**Các hàm built-in(được xây dựng sẵn)
+alert
+console
+confirm
+prompt
+setTimeout
+setInterval
+
+---------------------------------------------------
+- alert(var): in ra thông báo
+- console.log(var): in ra log
+- confirm(var): in ra hộp thoại xác nhận
+- prompt(var): in ra hộp thoại xác nhận mà user có thể nhập liệu
+- setTimeout(function() {}, mili giây): cho 1 đoạn code được chạy sau 1 khoảng thời gian mili giây
+- setInterval(function() {}, mili giây): cho 1 đoạn code chạy sau 1 tgian mili giây và lặp lại sau từng đó mili giây
+
+---------------------------------------------------
+**Toán tử trong Javascript
+Toán tử số học ( + - * / ) ( ** ; % ; ++ ; -- )
+Toán tử gán ( = 'value' ) ( += ; -= ; *= ; /= ; ** ; = )
+Toán tử so sánh ( >, < , == )
+Toán tử logic (&&)
+
+---------------------------------------------------
+- Toán tử so sánh
+VD: var a = 1; var b = 2
+	if (a == b) { alert('Đúng') }
+- Toán tử logic
+VD: var = 1; var b = 2
+	if (a > 0 && b>0) { alert('a&b lớn hơn 0') }
+
+---------------------------------------------------
+---------------------------------------------------
+// --------------------------------------
+Toán tử số học
+
+// **  : luỹ thừa / số mũ
+// %   : chia rồi chỉ lấy phần "dư"
+// ++  : tăng 1 giá trị số
+// --  : giảm 1 giá trị số
+
+
+NOTED:
+// Toán tử " ++ và -- " có 2 cách sử dụng là tiền tố / hậu tố
+// x++ tăng giá trị biến lên 1 và trả về giá trị trước khi tăng
+// ++x tăng giá trị biến lên 1 và trả về giá trị sau khi tăng
+// x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi giảm
+// --x giảm giá trị biến xuống 1 và trả về giá trị sau khi giảmm
+
+VD: var number = 1
+
+console.log(number++); // tăng giá trị của 'a' lên 1, nhưng in ra giá trị cũ ( trước tăng )
+console.log(++number); // tăng giá trị của 'a' lên 1, in ra giá trị mới ( đã tăng )
+// Khi viết:  a++; --> console.log(a): in ra giá trị mới
+
+
+// --------------------------------------
+
+Toán tử gán
+
+// Toán Tử     Ví Dụ       Tương Đương
+// =           x = y       x = y
+// +=          x += y      x = x + y
+// -=          x -= y      x = x - y
+// *=          x *= y      x = x * y
+// /=          x /= y      x = x / y
+// **=         x **= y     x = x ** y  (luỹ thừa/ số mũ)
+
+// --------------------------------------
+
+Toán tử nối chuỗi ( khi 1 trong 2 biến trong toán tử là 'chữ' )
+
+VD: var name = 'An';
+    name += ' ';
+    name += 'Ha';
+
+    console.log(name)
+
+// --------------------------------------
+
+Toán tử so sánh
+// ==  : bằng ( không so sánh kiểu dữ liệu )
+// === : bằng ( so sánh kiểu dữ liệu )
+// !=  : khác ( không so sánh kiểu dữ liệu )
+// !== : khác ( so sánh kiểu dữ liệu )
+// >   : lớn hơn
+// <   : nhỏ hơn
+// >=  : lớn hơn hoặc bằng
+// <=  : nhỏ hơn hoặc bằng
+
+// ?   : toán tử 3 ngôi ( điều kiện ? giá trị đúng : giá trị sai )
+
+VD: var a = 1;
+
+    var b = 2;
+    var c = a > b ? 'a lớn hơn b' : 'a nhỏ hơn b';
+    console.log(c)
+    // kết quả: a nhỏ hơn b
+
+// --------------------------------------
+
+Toán tử logic
+// &&  : và ( AND )
+// ||  : hoặc ( OR )
+// !   : không ( NOT )
+// ??  : nếu biến đầu tiên là null hoặc undefined thì lấy biến thứ 2
+// ( Nullish Coalescing Operator )
+NOTED:
+Với toán tử hoặc (||), nếu xuất hiện ít nhất 1 vế bằng 'true' thì kết quả trả về sẽ là 'true'.
+Còn với toán tử và (&&), nếu xuất hiện ít nhất 1 vế bằng 'false' thì kết quả trả về sẽ là 'false'.
+--------------------
+
+VD: var a = 1;
+    var b = 2;
+    var c = 3;
+
+    if (a > b && a > c) {
+        console.log('a lớn nhất');
+    } else if (b > a && b > c) {
+        console.log('b lớn nhất');
+    } else {
+        console.log('c lớn nhất');
+    }
+    // kết quả: c lớn nhất
+
+VD: var a = 1;
+    var b = 2;
+    var c = 3;
+
+    if (a > b || a > c) {
+        console.log('a lớn hơn b hoặc c');
+    } else {
+        console.log('a không lớn hơn b và c');
+    }
+    // kết quả: a không lớn hơn b và
+
+VD: var a = 1;
+
+    if (!(a > 0)) {
+        console.log('ĐÚNG');
+    } else {
+        console.log('SAI');
+    }
+    // kết quả: SAI
+    "!" là toán tử phủ định ( NOT ) làm cho giá trị if/else bị đảo ngược lại
+// --------------------------------------
+
+---------------------------------------------------
+---------------------------------------------------
+Kiểu dữ liệu trong Javascript:
+1. Dữ liệu nguyên thuỷ (Primitive Data Types)
+    - Number : số nguyên, số thực (int, float)
+    - String : chuỗi (string)
+    - Boolean : kiểu dữ liệu logic (true/false)
+    - Undefined : kiểu dữ liệu chưa được xác định (undefined)
+    - Null : kiểu dữ liệu rỗng (null)
+    - Symbol : kiểu dữ liệu duy nhất (symbol) (ES6)
+
+2. Dữ liệu phức tạp (Complex Data Types)
+    - Object : kiểu dữ liệu đối tượng (object)
+    - Function : kiểu dữ liệu hàm (function)
+
+    - Array : kiểu dữ liệu mảng (array)
+    - Date : kiểu dữ liệu ngày tháng (date)
+
+---------------------------------------------------
+---------------------------------------------------
+- Kiểu dữ liệu Number (số nguyên, số thực)
+VD: var a = 1; // số nguyên
+    var b = 2.5; // số thực
+
+    console.log(a); // kết quả: 1
+    console.log(b); // kết quả: 2.5
+---------------------------------------------------
+- Kiểu dữ liệu Boolean (true/false)
+VD: var a = 1;
+    var b = 2;
+
+    var XXX = a > b;
+
+    console.log(XXX)
+    // kết quả: trả về (True / False)
+
+---------------------------------------------------
+- Kiểu dữ liệu Undefined (chưa được xác định)
+VD: var a; // chưa được gán giá trị
+    console.log(a) // kết quả: undefined
+
+---------------------------------------------------
+- Kiểu dữ liệu Null (rỗng)
+VD: var a = null; // đã được gán giá trị null
+    console.log(a) // kết quả: null
+
+---------------------------------------------------
+- Kiểu dữ liệu Symbol (duy nhất)
+VD: var a = Symbol('a'); // đã được gán giá trị symbol
+    console.log(a) // kết quả: Symbol(a)
+
+---------------------------------------------------
+- Kiểu dữ liệu function (hàm)
+// Hàm là một đoạn mã có thể được gọi lại nhiều lần trong chương trình
+VD: function myFunction() {
+        console.log('Hà An');
+    }
+
+    myFunction(); // gọi hàm myFunction
+    // kết quả: Hà An
+
+hoặc VD: const myFunction = function() {
+        console.log('Hà An');
+    }
+
+    myFunction(); // gọi hàm myFunction
+    // kết quả: Hà An
+
+---------------------------------------------------
+- Kiểu dữ liệu Object (đối tượng)
+VD: var myObject = {
+        name: 'Hà An',
+        age: 18
+    };
+
+    console.log(myObject.name); // kết quả: Hà An
+    console.log(myObject.age); // kết quả: 18
+    console.log(myObjec); // kết quả: {name: 'Hà An', age: 18}
+
+---------------------------------------------------
+- Kiểu dữ liệu Array (Mảng)
+VD: var myArray = [
+        'Hà An',
+        18,
+        true,
+        null,
+        undefined,
+        Symbol('a')
+    ];
+    console.log(myArray); // kết quả: ['Hà An', 18, true, null, undefined, Symbol(a)]
+---------------------------------------------------
+---------------------------------------------------
+- Câu lệnh điều kiện if
+
+Có 6 giá trị sau khi nhập vào if / else sẽ được chuyển về kiểu dữ liệu Boolean (False) còn lại thì đều là (True):
+
+// false
+// 0 (số 0)
+// "" (chuỗi rỗng)
+// null (giá trị rỗng)
+// undefined (giá trị chưa được xác định)
+// NaN (Not a Number - không phải là số)
+----------------------
+// Cú pháp:
+// if (điều kiện) {
+//     // code được thực thi nếu điều kiện đúng
+// } else {
+//     // code được thực thi nếu điều kiện sai
+// }
+
+VD: var a = 5;
+    var b = 10;
+
+    if (a > b) {
+        console.log('a lớn hơn b');
+    } else {
+        console.log('a nhỏ hơn hoặc bằng b');
+    }
+
+// Kết quả: a nhỏ hơn hoặc bằng b
+
+---------------------------------------------------
+---------------------------------------------------
+
+
